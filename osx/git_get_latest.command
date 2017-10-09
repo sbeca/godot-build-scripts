@@ -1,6 +1,7 @@
 #!/bin/sh
 
-GIT_PARENT_FOLDER="${HOME}/Documents/GitHub"
+CURRENT_DIRECTORY=$(dirname "$0")
+source "${CURRENT_DIRECTORY}/global_variables.sh"
 
 if [ ! -d ${GIT_PARENT_FOLDER} ] ; then
     echo === Git parent folder does not exist: ${GIT_PARENT_FOLDER} ===

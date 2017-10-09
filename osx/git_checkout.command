@@ -1,7 +1,7 @@
 #!/bin/sh
 
-GIT_PARENT_FOLDER="${HOME}/Documents/GitHub"
-GIT_USERNAME="sbeca"
+CURRENT_DIRECTORY=$(dirname "$0")
+source "${CURRENT_DIRECTORY}/global_variables.sh"
 
 mkdir -p ${GIT_PARENT_FOLDER}
 cd ${GIT_PARENT_FOLDER}
