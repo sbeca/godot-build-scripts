@@ -3,12 +3,12 @@
 CALL ".\global_variables.bat"
 
 echo ==============================================================================
-IF NOT DEFINED VC_PATH (
+IF DEFINED VC_PATH (
+    echo Visual C++ vcvarsall.bat was found successfully
+) ELSE (
     echo Visual C++ vcvarsall.bat not found
     echo Please install Visual C++ from here: https://www.visualstudio.com/vs/community/
     echo IMPORTANT: C++ is not selected by default within the installer so make sure to select it
-) ELSE (
-    echo Visual C++ vcvarsall.bat was found successfully
 )
 
 echo ==============================================================================
@@ -21,12 +21,20 @@ git --version >nul 2>&1 && (
 
 echo ==============================================================================
 python --version >nul 2>&1 && (
+    SET PYTHON_FOUND=true
     echo Python was found successfully
 ) || (
     echo Python not found
     echo Please install Python 2.7+ from here: https://www.python.org/downloads/
     echo NOTE 1: 3.0 is untested as of now
     echo NOTE 2: Using the 32-bits installer is recommended
+)
+
+echo ==============================================================================
+IF DEFINED PYTHON_FOUND (
+    python .\check-dependencies-pywin32.py
+) ELSE (
+    echo Python not found so can't check for existence of Pywin32
 )
 
 echo ==============================================================================
