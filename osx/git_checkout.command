@@ -8,7 +8,7 @@ cd ${GIT_PARENT_FOLDER}
 
 function DoGitStuff {
     if [ -d "./${1}" ] ; then
-        echo === ${1} folder already exists so skipping checkout ===
+        echo "=== ${1} folder already exists so skipping checkout ==="
     else
         URL="https://github.com/${GIT_USERNAME}/${1}"
         curl -s --head ${URL} | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null

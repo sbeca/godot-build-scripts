@@ -4,12 +4,16 @@ CURRENT_DIRECTORY=$(dirname "$0")
 source "${CURRENT_DIRECTORY}/global_variables.sh"
 
 if [ ! -d ${GIT_PARENT_FOLDER} ] ; then
-    echo === Git parent folder does not exist: ${GIT_PARENT_FOLDER} ===
+    echo "\033[1;31m==============================================================================\033[0m"
+    echo "\033[1;31mGit parent folder does not exist: ${GIT_PARENT_FOLDER}\033[0m"
+    echo "\033[1;31m==============================================================================\033[0m"
     exit 1
 fi
 
 if [ ! -d ${GIT_PARENT_FOLDER}/godot ] ; then
-    echo === Godot source folder does not exist: ${GIT_PARENT_FOLDER}/godot ===
+    echo "\033[1;31m==============================================================================\033[0m"
+    echo "\033[1;31mGodot source folder does not exist: ${GIT_PARENT_FOLDER}/godot\033[0m"
+    echo "\033[1;31m==============================================================================\033[0m"
     exit 1
 fi
 
