@@ -39,6 +39,15 @@ else
 fi
 
 echo "=============================================================================="
+command -v javac >/dev/null 2>&1 && {
+    echo "\033[0;32mjavac was found successfully\033[0m";
+} || {
+    echo "\033[1;31mjavac not found.\033[0m";
+    echo "\033[1;31mThis is needed to be able to compile for Android.\033[0m";
+    echo "\033[1;31mPlease install the JDK\033[0m"
+}
+
+echo "=============================================================================="
 if [ "${ANDROID_HOME}" = "" ] ; then
     echo "\033[1;31mANDROID_HOME environment variable not set.\033[0m";
     echo "\033[1;31mPlease make sure that you have installed the Android SDK and then\033[0m";
