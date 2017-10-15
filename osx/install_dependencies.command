@@ -8,6 +8,7 @@ command -v brew >/dev/null 2>&1 || { echo "=== Installing brew ==="; /usr/bin/ru
 
 echo "=== Updating brew and everything installed via brew ==="
 brew update
+brew upgrade
 
 # Install scons, which is needed for the Godot build system
 echo "=== Installing scons via brew ==="
