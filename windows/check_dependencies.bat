@@ -32,7 +32,7 @@ python --version >nul 2>&1 && (
 
 echo ==============================================================================
 IF DEFINED PYTHON_FOUND (
-    python .\check-dependencies-pywin32.py
+    python .\check_dependencies_pywin32.py
 ) ELSE (
     echo Python not found so can't check for existence of Pywin32
 )
