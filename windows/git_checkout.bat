@@ -19,8 +19,8 @@ IF EXIST "%GIT_PARENT_FOLDER%\%~1" (
     ECHO === %~1 folder already exists so skipping checkout ===
 ) ELSE (
     git clone %URL%.git
-    cd ./%~1
+    cd "%GIT_PARENT_FOLDER%\%~1"
     git remote add upstream https://github.com/godotengine/%~1.git
-    cd ..
+    cd "%GIT_PARENT_FOLDER%"
 )
 EXIT /B 0
